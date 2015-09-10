@@ -14,5 +14,8 @@ angular.module('wrapApp.contacts', ['ngRoute', 'firebase'])
 		var ref = new Firebase('https://wraps.firebaseio.com/contacts');
 
 		$scope.contacts = $firebaseArray(ref);
-		console.log($scope.contacts);
+		
+		$scope.addFormSubmit = function() {
+			console.log('adding contact...');
+		}
 }]);
