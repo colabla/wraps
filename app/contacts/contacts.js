@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('wrapApp.contacts', ['ngRoute', 'firebase'])
+angular.module('wrapApp.contacts', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/contacts', {
@@ -9,6 +9,6 @@ angular.module('wrapApp.contacts', ['ngRoute', 'firebase'])
   });
 }])
 
-.controller('ContactsCtrl', ['$scope', '$firebaseArray', function($scope, $firebaseArray) {
+.controller('ContactsCtrl', ['$scope', function($scope) {
 		console.log($scope);
 }]);
