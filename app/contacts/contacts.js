@@ -10,5 +10,9 @@ angular.module('wrapApp.contacts', ['ngRoute', 'firebase'])
 }])
 
 .controller('ContactsCtrl', ['$scope', '$firebaseArray', function($scope, $firebaseArray) {
-		console.log($scope);
+
+		var ref = new Firebase('https://wraps.firebaseio.com/contacts');
+
+		$scope.contacts = $firebaseArray(ref);
+		console.log($scope.contacts);
 }]);
