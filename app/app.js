@@ -14,6 +14,6 @@ config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/contacts'});
 
     //Initialize Stripe
-		window.Stripe.setPublishableKey('PUBLISH_KEY');
+		//window.Stripe.setPublishableKey('PUBLISH_KEY');
 	
 }]);
