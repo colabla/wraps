@@ -24,3 +24,64 @@
 		</form>
 	</div>
 </div>
+ <div class="row">
+ 	<div class="large-10 columns">
+    <form action="/charge" method="post" id="chargeForm" class="payment">
+    
+        <label class="amount">
+          <span>Enter an amount or leave blank for $10.00</span>
+        </label>
+   
+
+      <script src="https://checkout.stripe.com/checkout.js"></script>
+      
+
+       
+        <input type="number" value="" placeholder="10" name="Amount" class="form-control" id="custom-donation-amount">
+        
+        <span class="input-group-btn">
+          <button class="btn btn-default" id="charge-button" type="submit" value="Subscribe" name="subscribe">
+            <span class="glyphicon glyphicon-circle-arrow-right">Purchase</span>
+          </button>
+        </span>
+      
+
+      <script>
+        $(function(){
+          var amount = 1000;
+          var handler = StripeCheckout.configure({
+            key: '<%= settings.publishable_key %>',
+            image: "",
+            token: function(token) {
+              // Use the token to create the charge with a server-side script.
+              // You can access the token ID with `token.id`
+              // return false;
+              var $input = $('<input type=hidden name=stripeToken />').val(token.id);
+              $("#chargeForm").append($input).submit();
+            }
+          });
+        
+          document.getElementById('charge-button').addEventListener('click', function(e) {
+            // This line is the only real modification...
+            var val =$("#custom-donation-amount").val();
+            if(val.length > 0) amount = val * 100;
+            else {
+              $("#custom-donation-amount").val(10);
+            };
+            handler.open({
+              name: 'Wraps Condoms',
+              description: 'Condom Order',
+              // ... aside from this line where we use the value.
+              amount: amount
+            });
+            e.preventDefault();
+          });
+          window.onpopstate= function() {
+
+            handler.close();
+          };
+        });
+      </script>
+    </form>
+  </div>
+  </div>
