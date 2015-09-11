@@ -1,6 +1,7 @@
 <div class="row" ng-controller="ContactsCtrl">
 	<div class="large-10 columns">
 			<!-- ADD CONTACT -->
+			<div data-alert ng-show="msg" class="alert-box">{{msg}}</div>
 		<form ng-submit="addFormSubmit()">
 		  		<h3>Add Contact</h3>
 		  		<!-- Add Form -->

@@ -7,6 +7,7 @@ angular.module('wrapApp', [
   'mm.foundation', 
   'ngAnimate', 
   'angularSpinner',
+  'firebase',
   'wrapApp.contacts'
 ]).
 config(['$routeProvider', function($routeProvider) {
