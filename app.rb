@@ -10,7 +10,7 @@ set :public_folder, Proc.new { File.join(root, "app") }
 Stripe.api_key = settings.secret_key
 
 get '/' do
-  erb :index
+  send_file 'app/index.html'
 end
 
 post '/charge' do
