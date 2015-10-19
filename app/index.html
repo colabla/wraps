@@ -10,20 +10,103 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/foundation/css/foundation.css">
+  <link rel="shortcut icon" type="image/png" href="img/wraps-favi.png">
+  <link rel="stylesheet" href="animate.css">
   <link rel="stylesheet" href="app.css">
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="https://checkout.stripe.com/checkout.js"></script>
+  <script src="https://use.typekit.net/mhy4lwj.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
+  <link href='https://fonts.googleapis.com/css?family=Amiri:400,400italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
 </head>
-<body>
-  <div class="container">
+<body id="home-top">
+
+<header>
+  <nav class="top-bar" data-topbar>
+    <ul class="title-area">
+      <li class="name"><h1><a href="#home-top"><img src="img/nav-logo@2x.png" alt=""></a></h1></li>
+      <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
+    </ul>
+    <section class="top-bar-section">
+        <ul class="right">
+        <li><a href="#simple">It's Pretty Simple</a></li>
+        <li><a href="#party">The Party</a></li>
+        <li><a href="#subscribe">Pre-Subscribe</a></li>
+      </ul>
+    </section>
+  </nav> <!-- /navbar-->
+    <div class="row">
+      <div class="large-12 columns top-headline">
+       Finally, better condoms!
+      </div>
+      <div class="large-12 columns bottom-headline">
+       And they’re (descretely) delivered to your door each month.
+      </div>
+    </div> <!-- /headline row-->
+    <div class="row">
+      <div class="large-12 large-centered columns">
+        <div class="button-container">
+        <a href="#" class="large button presub-button js--presub-btn">Pre-Subscribe for $9/Mo</a>
+        </div>
+      </div>
+    </div> <!-- /call action button row-->
+</header> <!-- /header -->
+<div id="simple" class="scroll-stop stick-nav-here"></div>
+<section class="wrap-content1">
+<div class="row">
+  <div class="large-6 columns">
+    <h2>Life’s sweeter when you wraps your peter.</h2>
+    <p>It’s very simple. Wraps delivers [insert health benefits here] condoms to your door each month. We have three different plans in two sizes. Choose a package, tell us where to send it, and you’re protected, forever. No more awkward trips to the convenient store. Adjust your plan or cancel anytime. Let Wraps work for you so you can focus on... the important things.</p>
+  </div>
+  <div class="large-6 columns wrap-img3">
+    <img class="bottomest" src="img/pool-party.jpg" alt="wraps image">
+    <img class="bottomest" src="img/step-three.jpg" alt="wraps image">
+    <img class="bottom" src="img/step-two.jpg" alt="wraps image">
+    <img class="top" src="img/step-one.jpg" alt="wraps image">
+    
+  </div>
+</div>
+</section> <!-- /wrap-content1-->
+<div id="party" class="scroll-stop"></div>
+<section id="" class="wrap-content2">
+<div class="row">
+  <div class="large-6 columns wrap-img-pool">
+    <img src="img/pool-party.png" alt="wraps image pool">
+  </div>
+  <div class="large-6 columns move-over">
+    <h2>Oh. You like to party?</h2>
+    <p>The first 200 Wraps annual subscribers are automatically on the VIP list for The Wraps Party— we need copy here Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati sit magnam ullam amet quibusdam. Rem dolor cum cumque doloribus architecto nesciunt vel, laudantium quisquam praesentium modi, unde sed. Exercitationem, eos.
+    </p>
+  </div> 
+</div>
+</section> <!-- /wrap-content2-->
+
+ <div ui-view></div>
+
+ <!--   <div class="container">
     <div class="row">
       <div class="large-12 columns">
-        <h1>Wraps</h1>
-        <hr>
       </div>
     </div>
     <div ng-view></div>
-  </div>
+  </div> -->
+  <footer>
+    <div class="row">
+      <div class="large-6 columns">
+        <img src="img/nav-logo@2x.png" alt="">
+    </div> <!-- /footer img -->
+    <div class="large-6 columns">
+      <ul class="inline-list right footer-links">
+      <li><a href="#">About</a></li>
+      <li><a href="#">Terms</a></li>
+      <li><a href="#">FAQ</a></li>
+      <li><a href="#">facebook</a></li>
+      <li><a href="#">twitter</a></li>
+      </ul>
+    </div> <!-- /footer links -->
+  </div> <!-- /footer row -->
+  </footer>
 
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -35,6 +118,7 @@
 
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script>
   <script src="bower_components/angular-animate/angular-animate.js"></script>
   <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
   <script type="text/javascript" src="bower_components/angular-payments/lib/angular-payments.js"></script>
@@ -45,7 +129,9 @@
     <script src="https://pineconellc.github.io/angular-foundation/mm-foundation-tpls-0.3.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/spin.js/2.0.1/spin.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-spinner/0.5.1/angular-spinner.js"></script>
+  <script src="jquery.waypoints.min.js"></script>  
   <script src="app.js"></script>
+  <script src="scripts.js"></script>
   <script src="contacts/contacts.js"></script>
 </body>
 </html>

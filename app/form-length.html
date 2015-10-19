@@ -1,0 +1,46 @@
+<section id="" class="wrap-checkout3">
+ 
+   <div class="row checkout-container wrap-checkout-content3">
+      <h2>Pre-subscribtion length</h2>
+      <p>Begin below with a pre-subscription to Wraps. The first box is coming early 2016.</p>
+      <div class="right vip-pass"><span>*Get 1 VIP party pass</span></div>
+       <div class="go-back-button-container left">
+        <a ui-sref="form.size" class="small button go-back-button">Your size</a>
+       </div>
+      <div class="circle-container">
+      <div class="large-3 large-offset-1 columns circlelength">
+        <div class="circle-length" ng-class="{active: selected=='optionLength1'}" ng-click="((selected='optionLength1') && (formData.subLength = 'one month nine dollars'))">
+          <div class="opacity-content">
+          1<span> mo</span>
+          <p>9$</p>
+        </div>
+        </div>
+      </div>
+      <div class="large-3  large-offset-1 columns circlelength">
+       <div class="circle-length" ng-class="{active: selected=='optionLength2'}" ng-click="((selected='optionLength2') && (formData.subLength = 'six months forty-five dollars'))">
+        <div class="opacity-content">
+          6<span> mo</span>
+           <p>$45</p>
+           
+         </div>
+        </div>
+      </div>
+      <div class="large-3 large-offset-1 columns circlelength">
+
+        <div class="circle-length" ng-class="{active: selected=='optionLength3'}" ng-click="((selected='optionLength3') && (formData.subLength = 'twelve months ninety dollars and VIP party-pass'))">
+          <div class="opacity-content">
+            12<span> mo</span>
+           <p>$90</p>
+         </div>
+        </div> 
+      </div>
+    </div> <!-- /circle-container -->
+  </div> 
+
+    <div class="large-12 large-centered columns button-bottom-container">
+        <div class="button-container">
+        <a  ui-sref="form.thankyou" class="large button checkout3-button">Okay, Let's checkout</a>
+        </div>
+    </div>
+  
+</section> <!-- /checkout3 length-->

@@ -1,0 +1,33 @@
+<section id="" class="wrap-checkout2">
+ 
+   <div class="row checkout-container wrap-checkout-content2">
+      <h2>Choose your size</h2>
+      <p>"It’s not the size of the boat, but the motion of the ocean"</p>
+       <div class="go-back-button-container left">
+        <a ui-sref="form.plan" class="small button go-back-button">Plan</a>
+       </div>
+      <div class="circle-container">
+      <div class="large-6 columns circlesize">
+        <div class="circle1-size circle-size" ng-class="{active: selected=='optionSize1'}" ng-click="((selected='optionSize1') && (formData.size = 'regular'))">
+          <div class="opacity-content">
+          <span>Reg.</span>
+        </div>
+        </div>
+      </div>
+      <div class="large-6 columns circlesize">
+       <div class="circle2-size circle-size" ng-class="{active: selected=='optionSize2'}" ng-click="((selected='optionSize2') && (formData.size = 'large'))">
+        <div class="opacity-content">
+          <span>Lg.</span>
+         </div>
+        </div>
+      </div>
+    </div> <!-- /circle-container -->
+  </div> 
+
+    <div class="large-12 large-centered columns button-bottom-container">
+        <div class="button-container">
+        <a ui-sref="form.length" class="large button checkout1-button">Great, Let's Move On</a>
+        </div>
+    </div>
+  
+</section> <!-- /checkout2 size-->
