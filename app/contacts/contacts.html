@@ -45,7 +45,8 @@
             <span class="glyphicon glyphicon-circle-arrow-right">Purchase</span>
           </button>
         </span>
- <div class="row">
+        
+<!--  <div class="row">
   <div class="large-10 columns">       
  <form stripe-form="stripeCallback" name="checkoutForm">
     <input ng-model="number" placeholder="Card Number" 
@@ -60,45 +61,47 @@
 </div>
 <div ng-if="checkoutForm.card.$invalid">
     Error: invalid card number!
-</div>
+</div> -->
+
+
       
 
-      <script>
-        $(function(){
-          var amount = 1000;
-          var handler = StripeCheckout.configure({
-            key: 'pk_test_ty1g4PE4P4ExkrtCufAzi7R5',
-            image: "",
-            token: function(token) {
-              // Use the token to create the charge with a server-side script.
-              // You can access the token ID with `token.id`
-              // return false;
-              var $input = $('<input type=hidden name=stripeToken />').val(token.id);
-              $("#chargeForm").append($input).submit();
-            }
-          });
+      // <script>
+      //   $(function(){
+      //     var amount = 1000;
+      //     var handler = StripeCheckout.configure({
+      //       key: 'pk_test_ty1g4PE4P4ExkrtCufAzi7R5',
+      //       image: "",
+      //       token: function(token) {
+      //         // Use the token to create the charge with a server-side script.
+      //         // You can access the token ID with `token.id`
+      //         // return false;
+      //         var $input = $('<input type=hidden name=stripeToken />').val(token.id);
+      //         $("#chargeForm").append($input).submit();
+      //       }
+      //     });
         
-          document.getElementById('charge-button').addEventListener('click', function(e) {
-            // This line is the only real modification...
-            var val =$("#custom-donation-amount").val();
-            if(val.length > 0) amount = val * 100;
-            else {
-              $("#custom-donation-amount").val(10);
-            };
-            handler.open({
-              name: 'Wraps Condoms',
-              description: 'Condom Order',
-              // ... aside from this line where we use the value.
-              amount: amount
-            });
-            e.preventDefault();
-          });
-          window.onpopstate= function() {
+      //     document.getElementById('charge-button').addEventListener('click', function(e) {
+      //       // This line is the only real modification...
+      //       var val =$("#custom-donation-amount").val();
+      //       if(val.length > 0) amount = val * 100;
+      //       else {
+      //         $("#custom-donation-amount").val(10);
+      //       };
+      //       handler.open({
+      //         name: 'Wraps Condoms',
+      //         description: 'Condom Order',
+      //         // ... aside from this line where we use the value.
+      //         amount: amount
+      //       });
+      //       e.preventDefault();
+      //     });
+      //     window.onpopstate= function() {
 
-            handler.close();
-          };
-        });
-      </script>
+      //       handler.close();
+      //     };
+      //   });
+      // </script>
     </form>
   </div>
   </div>

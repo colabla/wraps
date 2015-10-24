@@ -267,6 +267,7 @@ header {
 
 section.wrap-checkout1 {
 background: #F6474B!important;
+height: 535px;
 }
 .wrap-checkout-content {
   background: #F6474B;
@@ -359,6 +360,19 @@ background: #F6474B!important;
  background-repeat: no-repeat;
  background-position: 93% 44%;
 }
+.checkout1-button.ng-enter, .checkout1-button.ng-leave {
+  transition: 0.5s linear all;
+}
+
+.checkout1-button.ng-enter {
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+.checkout1-button.ng-enter.ng-enter-active {
+  opacity: 1;
+  transform: translateY(0px);
+}
 
 /*---------------------*/
 /*     CHECKOUT 2      */
@@ -366,6 +380,7 @@ background: #F6474B!important;
 
 section.wrap-checkout2 {
 background: #4b89f3;
+height: 535px;
 }
 .wrap-checkout-content2 {
   background: #4b89f3;
@@ -387,12 +402,12 @@ background: #4b89f3;
 .wrap-checkout-content2 span {
   font-size: 30px;
 }
-.circle1-size {
+/*.circle1-size {
   float: right;
 }
 .circle2-size {
   float: left;
-}
+}*/
 .circle-size {
   padding-top: 40px;
   width: 150px;
@@ -440,6 +455,7 @@ background: #4b89f3;
 
 section.wrap-checkout3 {
 background: #fda332;
+height: 535px;
 }
 .wrap-checkout-content3 {
   background: #fda332;
@@ -500,7 +516,8 @@ background: #fda332;
   opacity: 1;
 }
 .checkout3-button:link, 
-.checkout3-button:visited {
+.checkout3-button:visited,
+.checkout3-button {
   background: #fda332;
   color: #ffffff;
   font-family: 'Amiri', serif;
@@ -523,6 +540,19 @@ background: #fda332;
  background-image: url(img/next-arrow.png);
  background-repeat: no-repeat;
  background-position: 93% 44%;
+}
+.checkout3-button.ng-enter, .checkout3-button.ng-leave {
+  transition: 0.5s linear all;
+}
+
+.checkout3-button.ng-enter {
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+.checkout3-button.ng-enter.ng-enter-active {
+  opacity: 1;
+  transform: translateY(0px);
 }
 .vip-pass span {
   font-family: 'Lato', sans-serif;
@@ -580,7 +610,7 @@ background: #fda332;
   
   background-position: top center;
   background-repeat: no-repeat;
-  height: 534px;
+  height: 300px;
 
 } 
 .bg-wrap p {
@@ -672,6 +702,10 @@ footer img {
   font-family: 'Amiri', serif;
 }
 
+.ng-invalid {
+    color: red;
+}
+
 /* style.css */
 /* ANIMATION STYLINGS
 ============================================================================= */
@@ -724,4 +758,27 @@ footer img {
 @-webkit-keyframes slideInRight {
     from    { -webkit-transform:translateX(200%); }
     to      { -webkit-transform: translateX(0); }
+}
+
+@-webkit-keyframes pulse {
+  from {
+    -webkit-transform: scale(1.0);
+    opacity: 0.75;
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+    opacity: 1.0;
+  }
+  to { 
+    -webkit-transform: scale(1.0);
+    opacity: 0.75;
+  }
+}
+
+
+.checkout1-button,
+.checkout3-button { 
+  -webkit-animation-name: pulse; 
+  -webkit-animation-duration: 1.5s; 
+  -webkit-animation-iteration-count: infinite; 
 }

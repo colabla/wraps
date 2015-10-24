@@ -14,20 +14,35 @@ get '/' do
 end
 
 post '/charge' do
-	@amount = (params[:Amount].to_f * 100).to_i
+	puts 'here are the params' 
+	puts params
+	@amount = (params[:amount])
+	@size = (params[:size])
+	@plan = (params[:plan])
+	@month = (params[:month])
+	@email = (params[:email])
+	@description = (params[:description])
+	puts @month
+	puts @size
   puts @amount
+  puts @plan
+  puts @email
 	customer = Stripe::Customer.create(
-		:email => 'customer@example.com',
+		:email => @email,
+		:description => @description,
 		:card  => params[:stripeToken]
+
 	)
 
 	charge = Stripe::Charge.create(
 		:amount      => @amount,
-		:description => 'Sinatra Charge',
+		:description => 'Wraps Charge',
 		:currency    => 'usd',
-		:customer    => customer.id
+		:customer    => customer.id,
+		:metadata => {'quantity' => @plan, 'size' => @size, 'month' => @month}
 	)
-	erb :charge, :locals => { :amount => '%.2f' % (@amount.to_f/100) }
+
+	# validate formData price month quantity 
 end
 error Stripe::CardError do
 	  env['sinatra.error'].message

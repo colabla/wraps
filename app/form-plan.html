@@ -1,40 +1,32 @@
-<section id="" class="wrap-checkout1">
+<section id="subscribe" class="wrap-checkout1">
  
    <div class="row checkout-container wrap-checkout-content">
       <h2>Pre-subscribe to Wraps</h2>
       <p>Begin below with a pre-subscription to Wraps. The first box is coming early 2016.</p>
       <div class="circle-container">
-      <div class="large-3 large-offset-1 columns circle-one">
-        <div type="button" class="circle1" id="option1" ng-class="{active: selected=='option1'}" ng-click="((selected='option1') && (formData.plan = 'nine dollars and six condoms every month'))" value="">
+      <div class="large-3 large-offset-1 columns circle-one" ng-repeat="product in products">
+        <div  
+             type="button" 
+             class="circle1" 
+             id="option1" 
+             ng-class="{active: $index == selected}" 
+             ng-model="plan" 
+             ng-click=" addToCart(product); formData.plan = product; select($index);" 
+             value="">
           <div class="opacity-content">
-          $9<span>/mo</span>
-          <p>6 condoms</p>
+          ${{product.price}}<span>/mo</span>
+          <p>{{product.quantity}} condoms</p>
           
         </div>
        </div>
       </div>
-      <div class="large-3  large-offset-1 columns circle-one">
-       <div class="circle1" id="option2" ng-class="{active: selected=='option2'}" ng-click="((selected='option2') && (formData.plan = 'nine-teen dollars and eight-teen condoms every month'))">
-        <div class="opacity-content">
-          $19<span>/mo</span>
-           <p>18 condoms</p>
-         </div>
-        </div>
-      </div>
-      <div class="large-3 large-offset-1 columns circle-one">
-        <div class="circle1" id="option3" ng-class="{active: selected=='option3'}" ng-click="((selected='option3') && (formData.plan = 'twenty-nine dollars and thirty condoms every month'))">
-          <div class="opacity-content">
-            $29<span>/mo</span>
-           <p>30 condoms</p>
-         </div>
-        </div> 
-      </div>
+     
     </div> <!-- /circle-container -->
   </div> <!-- /checkout-container -->
 
     <div class="large-12 large-centered columns button-bottom-container">
         <div class="button-container">
-        <a ui-sref="form.size" class="large button checkout1-button">Great, Let's Move On</a>
+        <a ng-if="formData.plan.price > 0" ui-sref="form.size" class="large button checkout1-button">Great, Let's Move On</a>
         </div>
     </div>
   

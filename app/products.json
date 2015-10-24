@@ -1,0 +1,49 @@
+{"products": [
+	{
+		"id": 1,
+		"quantity": 6,
+		"price": 9},
+
+
+	{
+		"id": 2,
+		"quantity": 18,
+		"price": 19
+		
+	},
+	{
+		"id": 3,
+		"quantity": 30,
+		"price": 29
+			
+	}
+],
+"sizes": [
+	{
+		"id": 1,
+		"size": "Reg"
+
+	},
+	{
+		"id": 2,
+		"size": "Lg"
+
+	}
+],
+"sublengths": [
+	{
+		"id": 1,
+		"month": 1
+
+	},
+	{
+		"id": 2,
+		"month": 6
+
+	},
+	{
+		"id": "vip",
+		"month": 12
+
+	}
+]}

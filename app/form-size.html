@@ -7,26 +7,23 @@
         <a ui-sref="form.plan" class="small button go-back-button">Plan</a>
        </div>
       <div class="circle-container">
-      <div class="large-6 columns circlesize">
-        <div class="circle1-size circle-size" ng-class="{active: selected=='optionSize1'}" ng-click="((selected='optionSize1') && (formData.size = 'regular'))">
+      <div class="large-6 columns circlesize" ng-repeat="size in sizes">
+        <div class="circle1-size circle-size" 
+             ng-class="{active: $index == selected}" 
+             ng-model="size" 
+             ng-click="(formData.size = size)&&((select($index)))">
           <div class="opacity-content">
-          <span>Reg.</span>
+          <span>{{size.size}}.</span>
         </div>
         </div>
       </div>
-      <div class="large-6 columns circlesize">
-       <div class="circle2-size circle-size" ng-class="{active: selected=='optionSize2'}" ng-click="((selected='optionSize2') && (formData.size = 'large'))">
-        <div class="opacity-content">
-          <span>Lg.</span>
-         </div>
-        </div>
-      </div>
+     
     </div> <!-- /circle-container -->
   </div> 
 
     <div class="large-12 large-centered columns button-bottom-container">
         <div class="button-container">
-        <a ui-sref="form.length" class="large button checkout1-button">Great, Let's Move On</a>
+        <a ng-if="formData.size.size.length > 0" ui-sref="form.length" class="large button checkout1-button">Great, Let's Move On</a>
         </div>
     </div>
   

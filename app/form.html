@@ -1,8 +1,10 @@
- <form id="signup-form" ng-submit="processForm()">
+ <form id="signup-form">
    <!-- our nested state views will be injected here -->
     <div id="form-views" ui-view></div>
  </form>
-
+<form method="POST" action="/charge" name="checkoutForm" data-abide id="checkoutForm" >
+<!-- STRIPE FORM -->
+</form>
 <pre>
     {{ formData }}
 </pre>
