@@ -43,6 +43,8 @@ post '/charge' do
 	)
 
 	# validate formData price month quantity 
+	
+	redirect '#/form/thankyou'
 end
 error Stripe::CardError do
 	  env['sinatra.error'].message

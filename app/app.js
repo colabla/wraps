@@ -93,15 +93,14 @@ config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRou
          console.log(token, response);
          $scope.response = response;
          $scope.token = token;
-         
-
+      
          var $amount = $('<input type=hidden name=amount />').val($scope.formData.plan.price * $scope.formData.subLength.month * 100);
          var $description = $('<input type=hidden name=description />').val($scope.formData.plan.quantity+' wraps '+$scope.formData.size.size+' size '+$scope.formData.subLength.month+' month plan '+$scope.formData.subLength.id);
-         var $email = $('<input type=hidden name=email />').val(token.email);
+         var $email = $('<input type=hidden name=email />').val($scope.token.email);
          var $size = $('<input type=hidden name=size />').val($scope.formData.size.size); 
          var $plan = $('<input type=hidden name=plan />').val($scope.formData.plan.quantity);
          var $month = $('<input type=hidden name=month />').val($scope.formData.subLength.month); 
-         var $input = $('<input type=hidden name=stripeToken />').val(token.id);
+         var $input = $('<input type=hidden name=stripeToken />').val($scope.token.id);
          $("#checkoutForm").append($input).append($amount).append($plan).append($size).append($month).append($email).append($description).submit();
          $location.path('form/thankyou');
 

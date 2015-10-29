@@ -401,6 +401,8 @@ height: 535px;
 }
 .wrap-checkout-content2 span {
   font-size: 30px;
+  position: relative;
+  top: 10px;
 }
 /*.circle1-size {
   float: right;
@@ -705,6 +707,8 @@ footer img {
 .ng-invalid {
     color: red;
 }
+
+
 
 /* style.css */
 /* ANIMATION STYLINGS
